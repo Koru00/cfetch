@@ -4,6 +4,7 @@
 #include "cpu.h"
 #include "uptime.h"
 #include "os.h"
+#include "hostname.h"
 
 int main(int argc, char *argv[])
 {
@@ -27,6 +28,12 @@ int main(int argc, char *argv[])
     {
         exit(EXIT_FAILURE);
     }
+    char* user_hostname;
+    user_hostname = get_user_hostname();
+    if (!user_hostname)
+    {
+        exit(EXIT_FAILURE);
+    }
 
     printf("ram_info.total = %ld\n", ram_info.total);
     printf("ram_info.available = %ld\n", ram_info.available);
@@ -43,9 +50,13 @@ int main(int argc, char *argv[])
     printf("os_info.pretty_name = %s\n", os_info.pretty_name);
     printf("os_info.ansi_color = %s\n", os_info.ansi_color);
 
+    printf("user_hostname = %s\n", user_hostname);
+
     free(os_info.name);
     free(os_info.pretty_name);
     free(os_info.ansi_color);
+
+    free(user_hostname);
 
     return EXIT_SUCCESS;
 }

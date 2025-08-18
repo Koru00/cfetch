@@ -7,7 +7,7 @@ CC = gcc
 OPT = -O0
 DEPFLAGS = -MP -MD
 CFLAGS = -Wall -Wextra -g -fsanitize=address $(foreach D, $(INCDIRS), -I$(D)) $(OPT) $(DEPFLAGS)
-LDFLAGS = -fsanitize=address   # <-- link-time flags
+LDFLAGS = -fsanitize=address
 
 CFILES = $(foreach D, $(CODEDIRS), $(wildcard $(D)/*.c))
 OBJECTS = $(patsubst %.c, $(BUILD_DIR)/%.o, $(CFILES))
