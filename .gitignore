@@ -1,0 +1,65 @@
+# Binary output
+cfetch
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Build directory
+/build/
+
+# Dependency files
+*.d
+
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Linker output
+*.ilk
+*.map
+*.exp
+
+# Precompiled headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (Linux/macOS/Windows)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Debug symbols and temporary files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+*.dwo
+*.tmp
+*.log
+
+# Kernel module stuff (if relevant)
+*.mod*
+*.cmd
+.tmp_versions/
+modules.order
+Module.symvers
+Mkfile.old
+dkms.conf
+
+# IDE/editor files (optional, if you use editors like VSCode, Vim, etc.)
+.vscode/
+.idea/
+*.swp
+*.swo
